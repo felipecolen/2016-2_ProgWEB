@@ -1,0 +1,88 @@
+{# O EXTENDS QUER DIZER QUE ESTÁ HERDANDO O TEMPLATE, E NESSE CASO, DO TEMPLATE 'base.html' #}
+{% extends 'base.html' %}
+
+ESSE CONTEUDO NÃO VAI APARECER NO HTML POIS NÃO ESTÁ INCLUÍDO EM NENHUM BLOCO PRÉ DEFINIDO NO BASE.HTML
+
+<h1>MESMO QUE TENHA CÓDIGO HTML...</h1>
+
+
+{# ESSE BLOCO É O QUE DEFINIMOS NO TEMPLATE BASE, E VC PRECISA ABRIR O BLOCO E DEPOIS ENCERRÁ-LO COM endblock #}
+{% block conteudo_do_site %}
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h2 class="header center teal-text">Meu site com Flask & Materialize</h2>
+      <div class="row center">
+        <h5 class="header col s12 light">Programação para <i>Web</i> 2016/2</h5>
+        <h5 class="header col s12">
+          {{ data_no_html }}<br>
+          {{ hora_no_html }}
+        </h5>
+      </div>
+      <div class="row center">
+        <a href="https://github.com/felipecolen/2016-2_ProgWEB" id="download-button" target="_blank"
+           class="btn-large waves-effect waves-light orange">REPO GitHub</a>
+      </div>
+      <br><br>
+
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+      <div class="row">
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+
+            <h5 class="center">Categoria1</h5>
+
+            <p class="light center">
+              <a href="#"> Título Notícia 1 </a> <br>
+              <a href="#"> Título Notícia 2 </a> <br>
+              <a href="#"> Título Notícia 3 </a> <br>
+              <a href="#"> Título Notícia 4 </a> <br>
+              <a href="#"> Título Notícia 5 </a> <br>
+            </p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+
+            <h5 class="center">Categoria2</h5>
+
+            <p class="light center">
+              <a href="#"> Título Notícia 1 </a> <br>
+              <a href="#"> Título Notícia 2 </a> <br>
+              <a href="#"> Título Notícia 3 </a> <br>
+              <a href="#"> Título Notícia 4 </a> <br>
+              <a href="#"> Título Notícia 5 </a> <br>
+            </p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+
+            <h5 class="center">Categoria3</h5>
+
+            <p class="light center">
+              <a href="#"> Título Notícia 1 </a> <br>
+              <a href="#"> Título Notícia 2 </a> <br>
+              <a href="#"> Título Notícia 3 </a> <br>
+              <a href="#"> Título Notícia 4 </a> <br>
+              <a href="#"> Título Notícia 5 </a> <br>
+            </p>
+          </div>
+        </div>
+
+    </div>
+    <br><br>
+
+    <div class="section">
+
+    </div>
+  </div>
+
+{% endblock %}

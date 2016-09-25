@@ -1,0 +1,71 @@
+{# O EXTENDS QUER DIZER QUE ESTÁ HERDANDO O TEMPLATE, E NESSE CASO, DO TEMPLATE 'base.html' #}
+{% extends 'base.html' %}
+
+{# ESSE BLOCO É O QUE DEFINIMOS NO TEMPLATE BASE, E VC PRECISA ABRIR O BLOCO E DEPOIS ENCERRÁ-LO COM endblock #}
+{% block conteudo_do_site %}
+
+  <div class="col s12 m12 l12">
+    <h5 class="right-align">
+      em {{ data_no_html }} às {{ hora_no_html }}
+    </h5>
+
+    <table>
+      <thead>
+      <tr>
+        <th data-field="id">ID</th>
+        <th data-field="categoria">Categoria</th>
+        <th data-field="titulo">Título</th>
+        <th data-field="data">Data Pub.</th>
+        <th data-field="hora">Hora</th>
+        <th data-field="link">Link</th>
+      </tr>
+      </thead>
+
+      <tbody>
+
+      <tr>
+        <td>1</td>
+        <td>Categoria 1</td>
+        <td>Título da Notícia 1</td>
+        <td>01/01/2016</td>
+        <td>18h33</td>
+        <td>/noticia/1</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Categoria 2</td>
+        <td>Título da Notícia 2</td>
+        <td>01/01/2016</td>
+        <td>18h33</td>
+        <td>/noticia/2</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Categoria 2</td>
+        <td>Título da Notícia 3</td>
+        <td>01/01/2016</td>
+        <td>18h33</td>
+        <td>/noticia/3</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Categoria 3</td>
+        <td>Título da Notícia 4</td>
+        <td>01/01/2016</td>
+        <td>18h33</td>
+        <td>/noticia/4</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Categoria 3</td>
+        <td>Título da Notícia 5</td>
+        <td>01/01/2016</td>
+        <td>18h33</td>
+        <td>/noticia/5</td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+{% endblock %}

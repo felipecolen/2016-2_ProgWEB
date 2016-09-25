@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+
+  <title>Meu site com Flask & Materialize</title>
+  <link rel="icon" href="{{ url_for('static', filename='imagens/flask_logo.png') }}">
+  {#  AQUI É INCLUINDO O GERENCIAMENTO DESSES ARQUIVOS ESTÁTICOS PELO FLASK, DEFININDO UMA URL SEGURA #}
+  <link href="{{ url_for('static', filename='css/fonts_googleapis.css') }}" type="text/css" rel="stylesheet"
+        media="screen,projection"/>
+  <link href="{{ url_for('static', filename='css/materialize.css') }}" type="text/css" rel="stylesheet"
+        media="screen,projection"/>
+  <link href="{{ url_for('static', filename='css/style.css') }}" type="text/css" rel="stylesheet"
+        media="screen,projection"/>
+</head>
+
+<body>
+{% include '_nav_menu.html' %}
+
+<div class="container">
+  <div class="section">
+    <div class="row">
+      {% block conteudo_do_site %}
+        {#  TUDO QUE ESTIVER UTILIZANDO ESSE BLOCK EM OUTRAS PÁGINAS SERÁ ADD NESTE LOCAL DO HTML  #}
+      {% endblock %}
+    </div>
+  </div>
+</div>
+
+{#{% include '_footer.html' %}#}
+
+{#  AQUI É INCLUINDO O GERENCIAMENTO DESSES ARQUIVOS ESTÁTICOS PELO FLASK, DEFININDO UMA URL SEGURA #}
+<script src="{{ url_for('static', filename='js/materialize.js') }}"></script>
+<script src="{{ url_for('static', filename='js/init.js') }}"></script>
+
+</body>
+</html>
