@@ -82,11 +82,13 @@
 {#  <script src="js/init.js"></script>#}
 
 {#  UTILIZANDO SOMENTE O HTML AINDA, BASTA INCLUIR /static/ #}
+<!--  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script> -->
 <!--  <script src="/static/js/materialize.js"></script> -->
 <!--  <script src="/static/js/init.js"></script> -->
 
 
 {#  AQUI É INCLUINDO O GERENCIAMENTO DESSES ARQUIVOS ESTÁTICOS PELO FLASK, DEFININDO UMA URL SEGURA #}
+<script src="{{ url_for('static', filename='js/jquery-2.1.1.min.js') }}"></script>
 <script src="{{ url_for('static', filename='js/materialize.js') }}"></script>
 <script src="{{ url_for('static', filename='js/init.js') }}"></script>
 
