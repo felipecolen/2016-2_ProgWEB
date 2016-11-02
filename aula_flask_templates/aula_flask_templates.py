@@ -56,6 +56,9 @@ def mensagens_contato():
 
 
 if __name__ == '__main__':
+    # inclua essas linhas para pegar a porta e o ip configurados no heroku ou c9 por exemplo
+    porta = int(os.getenv('PORT', 5000))
+    host = os.getenv('IP', '0.0.0.0')
     # lembre-se sempre de ativar o debug para visualizar melhor
     # os erros e reiniciar automaticamente seu servidor
-    app.run(debug=True)
+    app.run(debug=True, port=porta, host=host)
