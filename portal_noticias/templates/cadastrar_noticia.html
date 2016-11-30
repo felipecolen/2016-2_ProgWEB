@@ -1,0 +1,33 @@
+{# O EXTENDS QUER DIZER QUE ESTÁ HERDANDO O TEMPLATE, E NESSE CASO, DO TEMPLATE 'base.html' #}
+{% extends 'base.html' %}
+
+{# ESSE BLOCO É O QUE DEFINIMOS NO TEMPLATE BASE, E VC PRECISA ABRIR O BLOCO E DEPOIS ENCERRÁ-LO COM endblock #}
+{% block conteudo_do_site %}
+
+    <div class="col s12 m12 l12">
+        <h5>
+            Cadastro de Notícia
+        </h5>
+        <div class="row">
+            <form method="POST" action="/cadastrar" class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="titulo" name="titulo" type="text" class="validate">
+                        <label for="titulo">Título da Notícia</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <textarea id="noticia" name="noticia" class="materialize-textarea"></textarea>
+                        <label for="noticia">Notícia</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="data_post" name="data_post" type="text" class="validate">
+                        <label for="data_post">Data do Post</label>
+                    </div>
+                </div>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+
+    </div>
+
+{% endblock %}

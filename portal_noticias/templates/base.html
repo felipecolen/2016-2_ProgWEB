@@ -31,6 +31,7 @@
 {#{% include '_footer.html' %}#}
 
 {#  AQUI É INCLUINDO O GERENCIAMENTO DESSES ARQUIVOS ESTÁTICOS PELO FLASK, DEFININDO UMA URL SEGURA #}
+<script src="{{ url_for('static', filename='js/jquery-2.1.1.min.js') }}"></script>
 <script src="{{ url_for('static', filename='js/materialize.js') }}"></script>
 <script src="{{ url_for('static', filename='js/init.js') }}"></script>
 

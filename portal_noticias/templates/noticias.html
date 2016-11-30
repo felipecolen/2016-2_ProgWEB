@@ -1,0 +1,35 @@
+{# O EXTENDS QUER DIZER QUE ESTÁ HERDANDO O TEMPLATE, E NESSE CASO, DO TEMPLATE 'base.html' #}
+{% extends 'base.html' %}
+
+{# ESSE BLOCO É O QUE DEFINIMOS NO TEMPLATE BASE, E VC PRECISA ABRIR O BLOCO E DEPOIS ENCERRÁ-LO COM endblock #}
+{% block conteudo_do_site %}
+
+    <div class="col s12 m12 l12">
+        <h5 class="right-align">
+            em {{ data_no_html }} às {{ hora_no_html }}
+        </h5>
+
+        <table>
+            <thead>
+            <tr>
+                <th data-field="id">ID</th>
+                <th data-field="titulo">Título</th>
+                <th data-field="data">Data Pub.</th>
+                <th data-field="link">Link</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {% for noticia in noticias %}
+                <tr>
+                    <td>{{ noticia[0] }}</td>
+                    <td>{{ noticia[1] }}</td>
+                    <td>{{ noticia[2] }}</td>
+                    <td>/noticia/{{ noticia[0] }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
