@@ -29,16 +29,15 @@ def criar_tabela():
           data_cadastro datetime NOT NULL,
           PRIMARY KEY (id)
         );
-        CREATE UNIQUE INDEX tb_usuario_id_uindex ON db_contato_flask.tb_usuario (id);
-        CREATE UNIQUE INDEX tb_usuario_usuario_uindex ON db_contato_flask.tb_usuario (usuario);
-
         CREATE TABLE noticia (
             id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
             titulo VARCHAR(100),
             noticia VARCHAR(500),
             data_post DATETIME
         );
-        CREATE UNIQUE INDEX noticia_id_uindex ON noticia (id)
+        CREATE UNIQUE INDEX tb_usuario_id_uindex ON portal_flask.tb_usuario (id);
+        CREATE UNIQUE INDEX tb_usuario_usuario_uindex ON portal_flask.tb_usuario (usuario);
+        CREATE UNIQUE INDEX noticia_id_uindex ON portal_flask.noticia (id)
     """
     conexao_cursor.execute(query_sql)
 
@@ -49,8 +48,8 @@ def criar_tabela():
 def excluir_tabela():
 
     query_sql = """
-        DROP TABLE db_contato_flask.noticia;
-        DROP TABLE db_contato_flask.tb_usuario;
+        DROP TABLE portal_flask.tb_usuario;
+        DROP TABLE portal_flask.noticia;
     """
     conexao_cursor.execute(query_sql)
 
